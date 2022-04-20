@@ -146,16 +146,16 @@ namespace Servo {
      */
     //% blockId=setLED block="Set LED|%led|degree %state"
     //% weight=85
-    //% led.min=1 led.max=2
+    //% led.min=1 led.max=3
     export function SetLED(led: number, state: boolean): void {
         if (!initialized) {
             initPCA9685();
         }
         if (state) {
-            setPwm(led + 9, 0, 4095);
+            setPwm(led + 8, 0, 4095);
         }
         else {
-            setPwm(led + 9, 0, 0);
+            setPwm(led + 8, 0, 0);
         }
     }
 
