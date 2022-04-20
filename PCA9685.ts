@@ -84,6 +84,9 @@ namespace Servo {
     //% blockId=setPWM block="Set PWM|%channel|ON %on|off %off"
     //% weight=85
     export function setPwm(channel: number, on: number, off: number): void {
+        if (!initialized) {
+            initPCA9685();
+        }
         if (channel < 0 || channel > 15)
             return;
 
@@ -103,6 +106,9 @@ namespace Servo {
     //% blockId=setPWM block="Set pin|%channel ON "
     //% weight=85
     export function FullOn(channel: number): void {
+        if (!initialized) {
+            initPCA9685();
+        }
         if (channel < 0 || channel > 15)
             return;
 
@@ -122,6 +128,9 @@ namespace Servo {
     //% blockId=setPWM block="Set pin|%channel Off "
     //% weight=85
     export function FullOff(channel: number): void {
+        if (!initialized) {
+            initPCA9685();
+        }
         if (channel < 0 || channel > 15)
             return;
 
