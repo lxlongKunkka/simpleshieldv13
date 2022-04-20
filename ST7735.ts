@@ -1405,6 +1405,8 @@ pins.spiFrequency(18000000)
 
 //let LCD_RST = DigitalPin.P16;
 let LCD_DC = DigitalPin.P8;
+//CS Servo.7
+//RST Servo.0
 
 //% weight=20 color=#436EEE icon="\uf108"
 namespace LCD1IN8 {
@@ -1420,10 +1422,10 @@ namespace LCD1IN8 {
         //Servo.setPwm(0, 0, 4095);
         control.waitMicros(1000);
         //Servo.setPwm(0, 0, 0);
-        //Servo.FullOff(0);
+        Servo.FullOff(0);
         //pins.digitalWritePin(LCD_RST, 0);
         control.waitMicros(1000);
-        //Servo.FullOn(0);
+        Servo.FullOn(0);
         //Servo.setPwm(0, 0, 4095);
         //pins.digitalWritePin(LCD_RST, 1);
 
