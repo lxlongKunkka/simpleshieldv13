@@ -23,7 +23,7 @@ namespace SimpleShieldKey {
         let val = 0;
         Servo.FullOff(8);
         Servo.SetLED(1, false);
-        control.waitMicros(25000);
+        control.waitMicros(21000);
         Servo.FullOn(8);
         Servo.SetLED(1, true);
         let i = 0;
@@ -32,8 +32,9 @@ namespace SimpleShieldKey {
             let tmp = pins.digitalReadPin(INSR0_DATA);
             val |= tmp;
             pins.digitalWritePin(SR_CLK, 0);
-            control.waitMicros(15000);
+            control.waitMicros(10000);
             pins.digitalWritePin(SR_CLK, 1);
+            control.waitMicros(2000);
         }
 
         return val;
